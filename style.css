@@ -1,0 +1,285 @@
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #2bb5c0, #274b80);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  text-align: center;
+}
+.page {
+  padding: 20px;
+}
+
+/* Landing Page Title Animation */
+.animated-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: fadeIn 2s ease-in-out infinite alternate;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.btn {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.big-btn {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: 1px white solid;
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Profiles Page */
+.profiles-container {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.profile-btn {
+  background: rgba(255, 255, 255, 0.432);
+  border: none;
+  border-radius: 10px;
+  padding: 45px 35px;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.profile-pic-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.add-profile {
+  margin-top: 20px;
+}
+.plus-btn {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.plus-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+#newProfileInput,
+#profilePicInput {
+  margin-top: 10px;
+  padding: 10px;
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  outline: none;
+}
+.trash-icon {
+  margin-left: 5px;
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+.trash-icon:hover {
+  opacity: 1;
+}
+
+/* Profile Page (Wishes) */
+.profile-page {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+/* Profile Picture (optional) */
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+  display: block;
+  border: 2px solid #fff;
+}
+
+/* Wishes Grid */
+.wishes-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 47px;
+  justify-items: center;
+}
+
+/* Wish Card */
+.wish-card {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background: #a8d8f0; /* Pastel teal */
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+  cursor: default;
+  overflow: hidden;
+  padding: 10px;
+}
+.wish-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-height: 100%;
+  line-height: 1.3;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hover effect: reveal actions */
+.wish-card:hover {
+  transform: scale(1.03);
+}
+.wish-actions {
+  display: none;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+.wish-card:hover .wish-actions {
+  display: block;
+}
+.wish-actions button {
+  background: transparent;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+.wish-actions button:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.wish-card.done {
+  background: #b0e8a1 !important;
+}
+.wish-card.done .wish-text {
+  text-decoration: line-through;
+}
+.wish-card.add {
+  background: none;
+  border: 2px dashed #fff;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.wish-card.add:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+.add-input {
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 5px;
+  color: #333;
+}
+
+/* --- Pink Theme Overrides --- */
+/* When the entire site should turn pink, we add the class "pink-theme" to the body */
+body.pink-theme {
+  background: linear-gradient(to right, #ffc0cb, #ff69b4);
+}
+body.pink-theme .container {
+  background: rgba(255, 192, 203, 0.2);
+  border: 1px solid rgba(255, 192, 203, 0.18);
+}
+/* Also update wish cards */
+body.pink-theme .wish-card {
+  background: #f0a8d8; /* Pastel pink */
+}
+body.pink-theme .wish-card.done {
+  background: #e8a1b0;
+}

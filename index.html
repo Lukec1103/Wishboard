@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WishBoard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <!-- Landing Page -->
+    <div id="landingPage" class="page">
+      <h1 class="animated-title">Hello! Welcome to WishBoard</h1>
+      <button id="continueBtn" class="btn big-btn">Continue</button>
+    </div>
+
+    <!-- Profiles Page -->
+    <div id="profilesPage" class="page" style="display: none;">
+      <button id="backFromProfiles" class="back-btn">&larr;</button>
+      <h2>Select a Profile</h2>
+      <div id="profilesContainer" class="profiles-container"></div>
+      <div class="add-profile">
+        <button id="addProfileBtn" class="plus-btn">+</button>
+        <input type="text" id="newProfileInput" placeholder="New profile name" style="display: none;" />
+        <input type="file" id="profilePicInput" accept="image/*" style="display: none;" />
+      </div>
+    </div>
+
+    <!-- Profile Page (Wishes) -->
+    <div id="profilePage" class="page profile-page" style="display: none;">
+      <button id="backFromProfile" class="back-btn">&larr;</button>
+      <h2 id="profileNameHeader">Profile Name</h2>
+      <img id="profileImage" src="" alt="Profile Picture" class="profile-pic" style="display: none;" />
+      <!-- Grid for wishes -->
+      <div id="wishesGrid" class="wishes-grid"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
